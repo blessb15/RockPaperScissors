@@ -23,40 +23,36 @@ public class RPS {
       String input = request.queryParams("input");
       String isRPS = isRPS(input);
 
-      model.put("isRPS", isRPS);
+      model.put("input", isRPS);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 }
 
 
 
-    public static String isRPS(String symbol) {
+
+    public static String isRPS(String input) {
       Random cpuRandom = new Random();
       String[] cpuSymbols = {"Rock", "Paper", "Scissors"};
       String[] playerSymbols = {"Rock", "Paper", "Scissors"};
       Integer num = cpuRandom.nextInt(cpuSymbols.length);
       String cpuString = cpuSymbols[num].toString();
       String message = "";
-        // if (symbol == cpuSymbols[num]) {
-        //   message = "tie";
-        // } else
-        if (symbol == "Rock" && cpuString == "Paper"){
+        if (input.equals("Rock") && cpuString.equals("Paper")){
           message = "cpu wins";
-        } else if (symbol == "Rock" && cpuString == "Scissors"){
+        } else if (input.equals("Rock") && cpuString.equals("Scissors")){
           message = "player wins";
-        } else if (symbol == "Paper" && cpuString == "Rock"){
+        } else if (input.equals("Paper") && cpuString.equals("Rock")){
           message = "player wins";
-        } else if (symbol == "Paper" && cpuString == "Scissors"){
+        } else if (input.equals("Paper") && cpuString.equals("Scissors")){
           message = "cpu wins";
-        } else if (symbol == "Scissors" && cpuString == "Rock"){
+        } else if (input.equals("Scissors") && cpuString.equals("Rock")){
           message = "cpu wins";
-        } else if (symbol == "Scissors" && cpuString == "Paper"){
+        } else if (input.equals("Scissors") && cpuString.equals("Paper")){
           message = "player wins";
-        } else {
+        } else if (input.equals(cpuString)){
           message = "tie";
         }
-        return message;
-
       //   if (symbol == playerSymbols[2]) {
       //     return true;
       //     .add("you tie")
@@ -64,5 +60,7 @@ public class RPS {
       //     return false;
       //     .add("you lose")
       // }
+  return message;
   }
+
 }

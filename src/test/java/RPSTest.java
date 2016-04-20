@@ -54,8 +54,7 @@ public class RPSTest {
   public void isRPS_isMessageShowing_String(){
     RPS testRPS = new RPS();
     String expected = "player wins";
-    assertEquals(expected, testRPS.isRPS("Rock"));
+    assertEquals(expected, testRPS.isRPS("Paper"));
   }
-
 
 }
