@@ -1,12 +1,15 @@
 <h1>Play Rock-Paper-Scissors</h1>
 
 <p>Play Rock-Paper-Scissors against either another player or the computer. Type "Rock", "Paper", or "Scissors" and click "Submit."</p>
-
-<form action='/detector' method='get'>
+<label for="index">One or two players?</label>
+<form action='/onePlayer' method='get'>
   <div class="form-group">
-    <label for="index">Enter a Symbol</label>
-    <input id="index" name="input" class="form-control" type="text">
+    <button id="index" name="input" class="form-control" type="submit" class="btn btn-info">One Player</button>
   </div>
+</form>
 
-  <button type="submit" class="btn btn-info">Play!</button>
+<form action='/twoPlayer' method='get'>
+  <div class="form-group">
+  <button id="index" name="input" class="form-control" type="submit" class="btn btn-info">Two Player</button>
+  </div>
 </form>
